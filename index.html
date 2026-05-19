@@ -32,7 +32,7 @@
     min-height: 100vh;
     background: 
       linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-      url("images/hero.jpg");
+      url("land.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -41,6 +41,1548 @@
     overflow: hidden;
     padding-top: 72px;
 }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--white);
+    color: #1a0a10;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    background: rgba(106,30,58,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(224,205,152,0.2);
+  }
+
+  
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  .nav-logo svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .nav-logo-text .brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 3px;
+    color: var(--white);
+  }
+
+  .nav-logo-text .sub {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 8px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-top: 3px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--burgundy) !important;
+    padding: 9px 22px !important;
+    border-radius: 2px;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--burgundy-dark);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 72px;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 60px,
+        rgba(224,205,152,0.03) 60px,
+        rgba(224,205,152,0.03) 61px
+      );
+  }
+
+  .hero-orb {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, rgba(106,30,58,0.8), rgba(74,18,40,0.2) 60%, transparent);
+    border: 1px solid rgba(224,205,152,0.1);
+  }
+
+  .hero-orb::after {
+    content: '';
+    position: absolute;
+    inset: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(224,205,152,0.08);
+  }
+
+  .hero-diamond {
+    position: absolute;
+    right: 180px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 320px;
+    height: 320px;
+    border: 1px solid rgba(224,205,152,0.15);
+    animation: spin-slow 40s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    from { transform: translateY(-50%) rotate(45deg); }
+    to { transform: translateY(-50%) rotate(405deg); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 80px 80px 80px 96px;
+    max-width: 700px;
+    animation: fadeUp 1s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(224,205,152,0.12);
+    border: 1px solid rgba(224,205,152,0.3);
+    padding: 7px 18px;
+    border-radius: 2px;
+    margin-bottom: 36px;
+    animation: fadeUp 1s ease 0.1s both;
+  }
+
+  .hero-badge span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .hero-motto {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--gold-dark);
+    margin-bottom: 20px;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 12px;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    animation: fadeUp 1s ease 0.35s both;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 48px;
+    max-width: 520px;
+    animation: fadeUp 1s ease 0.4s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 1s ease 0.5s both;
+  }
+
+  .btn-primary {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    background: var(--gold);
+    color: var(--burgundy-dark);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(224,205,152,0.3);
+  }
+
+  .btn-outline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .hero-stats {
+    position: absolute;
+    bottom: 48px;
+    left: 96px;
+    display: flex;
+    gap: 48px;
+    animation: fadeUp 1s ease 0.6s both;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ── SECTION SHARED ── */
+  section { position: relative; }
+
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: var(--gold-dark);
+  }
+
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(30px, 3.5vw, 46px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--burgundy-dark);
+  }
+
+  .section-title.light { color: var(--white); }
+
+  /* ── WHO WE ARE ── */
+  #about {
+    background: var(--off-white);
+    padding: 120px 96px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-left .section-label { color: var(--burgundy); }
+  .about-left .section-label::before { background: var(--burgundy); }
+
+  .about-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4a3040;
+    margin-top: 24px;
+  }
+
+  .about-text p + p { margin-top: 18px; }
+
+  .about-belief {
+    margin-top: 36px;
+    padding: 28px 32px;
+    background: var(--burgundy);
+    border-left: 4px solid var(--gold);
+    border-radius: 2px;
+  }
+
+  .about-belief p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--gold-light);
+  }
+
+  .about-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .value-card {
+    background: var(--white);
+    padding: 28px 24px;
+    border-radius: 4px;
+    border-top: 3px solid var(--gold);
+    box-shadow: 0 4px 20px rgba(106,30,58,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(106,30,58,0.12);
+  }
+
+  .value-card:first-child {
+    grid-column: 1 / -1;
+    border-top-color: var(--burgundy);
+    background: var(--burgundy);
+  }
+
+  .value-card:first-child .vc-title,
+  .value-card:first-child .vc-desc { color: var(--white); }
+  .value-card:first-child .vc-desc { color: rgba(255,255,255,0.7); }
+
+  .vc-icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .vc-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--burgundy-dark);
+    margin-bottom: 8px;
+  }
+
+  .vc-desc {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #6a5060;
+  }
+
+  /* ── PHILOSOPHY ── */
+  #philosophy {
+    background: var(--burgundy-dark);
+    padding: 100px 96px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #philosophy::before {
+    content: '"';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 300px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: rgba(224,205,152,0.05);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .philosophy-quote {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--white);
+    max-width: 700px;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .philosophy-quote em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .philosophy-attr {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin-bottom: 60px;
+  }
+
+  .philosophy-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.6);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  /* ── WHAT WE STAND FOR ── */
+  #pillars {
+    background: var(--white);
+    padding: 120px 96px;
+  }
+
+  .pillars-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .pillars-header .section-label {
+    justify-content: center;
+  }
+
+  .pillars-header .section-label::before { display: none; }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .pillar {
+    padding: 40px 28px;
+    border-right: 1px solid var(--light-gray);
+    text-align: center;
+    transition: background 0.3s;
+    position: relative;
+  }
+
+  .pillar:last-child { border-right: none; }
+
+  .pillar:hover { background: var(--off-white); }
+
+  .pillar-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: rgba(106,30,58,0.08);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .pillar-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .pillar-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 10px;
+  }
+
+  .pillar-desc {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #7a6070;
+  }
+
+  /* ── DIVISIONS ── */
+  #divisions {
+    background: var(--off-white);
+    padding: 120px 96px;
+  }
+
+  .divisions-header {
+    margin-bottom: 60px;
+  }
+
+  .divisions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .division-card {
+    background: var(--white);
+    border-radius: 4px;
+    overflow: hidden;
+    border-bottom: 3px solid transparent;
+    box-shadow: 0 2px 16px rgba(106,30,58,0.06);
+    transition: all 0.25s;
+  }
+
+  .division-card:hover {
+    border-bottom-color: var(--gold);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(106,30,58,0.14);
+  }
+
+  .division-top {
+    background: var(--burgundy);
+    padding: 28px 30px 24px;
+    position: relative;
+  }
+
+  .division-num {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.07);
+    line-height: 1;
+  }
+
+  .division-tag {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .division-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--white);
+  }
+
+  .division-body {
+    padding: 26px 30px;
+  }
+
+  .division-desc {
+    font-size: 13px;
+    line-height: 1.75;
+    color: #6a5060;
+  }
+
+  /* ── FOCUS AREAS ── */
+  #focus {
+    background: var(--white);
+    padding: 120px 96px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .focus-left { position: sticky; top: 100px; }
+
+  .focus-subtitle {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #5a404e;
+    margin-top: 20px;
+  }
+
+  .focus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .focus-item {
+    padding: 24px 28px;
+    border-left: 3px solid var(--light-gray);
+    transition: all 0.2s;
+    cursor: default;
+  }
+
+  .focus-item:hover {
+    border-left-color: var(--burgundy);
+    background: var(--off-white);
+    padding-left: 34px;
+  }
+
+  .focus-item-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--burgundy-dark);
+    margin-bottom: 6px;
+  }
+
+  .focus-item-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #7a6070;
+  }
+
+  /* ── MISSION & VISION ── */
+  #mission {
+    background: var(--burgundy-dark);
+    padding: 120px 96px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .mv-card {
+    padding: 60px 56px;
+    position: relative;
+  }
+
+  .mv-card:first-child {
+    background: rgba(255,255,255,0.04);
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .mv-card:last-child {
+    background: rgba(224,205,152,0.06);
+  }
+
+  .mv-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mv-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(224,205,152,0.2);
+    max-width: 60px;
+  }
+
+  .mv-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* ── CORE VALUES ── */
+  #values {
+    background: var(--off-white);
+    padding: 120px 96px;
+  }
+
+  .values-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .val-card {
+    background: var(--white);
+    padding: 40px 36px;
+    border-radius: 4px;
+    box-shadow: 0 2px 16px rgba(106,30,58,0.05);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+
+  .val-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--burgundy), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .val-card:hover::before { transform: scaleX(1); }
+  .val-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(106,30,58,0.12); }
+
+  .val-icon { font-size: 32px; margin-bottom: 18px; }
+
+  .val-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--burgundy-dark);
+    margin-bottom: 10px;
+  }
+
+  .val-desc {
+    font-size: 13px;
+    line-height: 1.75;
+    color: #7a6070;
+  }
+
+  /* ── WHAT MAKES US DIFFERENT ── */
+  #differentiators {
+    background: var(--white);
+    padding: 120px 96px;
+  }
+
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+    margin-top: 60px;
+    background: var(--light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .diff-item {
+    background: var(--white);
+    padding: 44px 48px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .diff-item:hover { background: var(--off-white); }
+
+  .diff-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: rgba(106,30,58,0.08);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 52px;
+  }
+
+  .diff-content {}
+
+  .diff-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--burgundy);
+    margin-bottom: 8px;
+  }
+
+  .diff-desc {
+    font-size: 13px;
+    line-height: 1.75;
+    color: #6a5060;
+  }
+
+  /* ── CTA ── */
+  #cta {
+    background: linear-gradient(135deg, var(--burgundy-dark) 0%, var(--burgundy) 100%);
+    padding: 120px 96px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #cta::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    border: 1px solid rgba(224,205,152,0.06);
+  }
+
+  #cta::after {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(224,205,152,0.08);
+  }
+
+  .cta-inner { position: relative; z-index: 1; }
+
+  .cta-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .cta-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .cta-sub {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.6);
+    max-width: 500px;
+    margin: 0 auto 48px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #1a0810;
+    padding: 60px 96px 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-bottom: 32px;
+  }
+
+  .footer-brand .nav-logo-text .brand { font-size: 17px; }
+  .footer-brand .nav-logo-text .sub { font-size: 9px; }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 16px;
+    line-height: 1.7;
+    max-width: 260px;
+  }
+
+  .footer-col-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.2);
+  }
+
+  .footer-copy span { color: var(--gold-dark); }
+
+  .footer-motto {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 1px;
+  }
+
+  /* ── LOGO SVG ── */
+  .sgp-logo-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    #hero { padding-top: 72px; }
+    .hero-content { padding: 60px 24px; }
+    .hero-stats { left: 24px; gap: 28px; }
+    .hero-diamond { display: none; }
+    #about, #focus { grid-template-columns: 1fr; padding: 60px 24px; }
+    .about-right { grid-template-columns: 1fr 1fr; }
+    .value-card:first-child { grid-column: 1 / -1; }
+    #philosophy { padding: 80px 24px; }
+    #pillars, #divisions, #values, #differentiators, #mission, #cta { padding: 80px 24px; }
+    .pillars-grid { grid-template-columns: 1fr 1fr; }
+    .pillar { border-right: none; border-bottom: 1px solid var(--light-gray); }
+    .divisions-grid, .values-grid { grid-template-columns: 1fr; }
+    .mission-grid, .diff-grid { grid-template-columns: 1fr; }
+    .mv-card:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    footer { padding: 60px 24px 40px; }
+    .footer-top { grid-template-columns: 1fr; gap: 36px; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .focus-left { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="20,2 36,12 36,28 20,38 4,28 4,12" fill="none" stroke="#E0CD98" stroke-width="1" opacity="0.4"/>
+      <polygon points="20,6 32,14 32,26 20,34 8,26 8,14" fill="#6A1E3A"/>
+      <path d="M14 16 L20 10 L26 16 L20 22 Z" fill="#E0CD98" opacity="0.9"/>
+      <path d="M14 24 L20 18 L26 24 L20 30 Z" fill="#E0CD98" opacity="0.5"/>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="brand">SYNOVATE</span>
+      <span class="sub">Global Partners</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#pillars">What We Do</a></li>
+    <li><a href="#divisions">Divisions</a></li>
+    <li><a href="#focus">Services</a></li>
+    <li><a href="#values">Values</a></li>
+    <li><a href="#cta" class="nav-cta">Partner With Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-diamond"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge"><span>Synovate Global Partners · SGP</span></div>
+    <p class="hero-motto">Ideas are seeds of transformation</p>
+    <h1 class="hero-title">Where <em>Vision</em><br>Leads the World.</h1>
+    <p class="hero-tagline">Innovating Together for a Smarter Tomorrow</p>
+    <p class="hero-desc">
+      A forward-thinking, multi-sector innovation and business solutions firm built on strategic intelligence, collaboration, creativity and purposeful execution — where minds unite to turn ideas into scalable impact.
+    </p>
+    <div class="hero-actions">
+      <a href="#about" class="btn-primary">Discover SGP</a>
+      <a href="#cta" class="btn-outline">Partner With Us</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">5+</span>
+      <span class="stat-label">Divisions</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">6</span>
+      <span class="stat-label">Core Sectors</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">∞</span>
+      <span class="stat-label">Possibilities</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section id="about">
+  <div class="about-left reveal">
+    <p class="section-label">Who We Are</p>
+    <h2 class="section-title">A Partnership-Driven<br>Powerhouse</h2>
+    <div class="about-text">
+      <p>Synovate Global Partners (SGP) is a forward-thinking, multi-sector innovation and business solutions firm built on strategic intelligence, collaboration, creativity, innovative thinking and purposeful execution.</p>
+      <p>We exist to identify possibilities, shape ideas and convert them into practical, profitable and scalable solutions for organisations, governments and society at large.</p>
+      <p>We operate as a partnership-driven enterprise, bringing together experts from technology, data analytics, brand strategy, transportation, public administration, project management, manufacturing and production.</p>
+    </div>
+    <div class="about-belief">
+      <p>"The greatest resource in the world is not capital, technology or infrastructure — it is the human mind and the strength of human relationships."</p>
+    </div>
+  </div>
+
+  <div class="about-right reveal">
+    <div class="value-card">
+      <div class="vc-icon">🧠</div>
+      <div class="vc-title">Think M.A.D.</div>
+      <div class="vc-desc">Make A Difference — our innovation culture that challenges norms and drives future-ready thinking across every engagement.</div>
+    </div>
+    <div class="value-card">
+      <div class="vc-icon">🤝</div>
+      <div class="vc-title">Synergy</div>
+      <div class="vc-desc">We achieve more together through deep collaboration across disciplines and borders.</div>
+    </div>
+    <div class="value-card">
+      <div class="vc-icon">🎯</div>
+      <div class="vc-title">Precision</div>
+      <div class="vc-desc">Every strategy is purposeful, actionable and result-oriented from concept to execution.</div>
+    </div>
+    <div class="value-card">
+      <div class="vc-icon">🌍</div>
+      <div class="vc-title">Global Impact</div>
+      <div class="vc-desc">Our integrated model enables versatility, scalability and cross-sector impact across Africa and beyond.</div>
+    </div>
+    <div class="value-card">
+      <div class="vc-icon">🏛️</div>
+      <div class="vc-title">Governance</div>
+      <div class="vc-desc">Highly structured governance with clearly defined partner roles and transparent operations.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="reveal">
+    <p class="philosophy-quote">"The best way to predict the future is to <em>create it</em>."</p>
+    <p class="philosophy-attr">— Peter Drucker · Our Philosophy</p>
+    <p class="philosophy-desc">
+      SGP is built on the conviction that ideas are seeds of transformation. When refined, structured and executed with purpose, they reshape societies, build institutions and create wealth. That is precisely what we do.
+    </p>
+  </div>
+</section>
+
+<!-- WHAT WE STAND FOR -->
+<section id="pillars">
+  <div class="pillars-header reveal">
+    <p class="section-label">What SGP Stands For</p>
+    <h2 class="section-title">Five Pillars of Our Identity</h2>
+  </div>
+  <div class="pillars-grid reveal">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <span class="pillar-icon">💡</span>
+      <div class="pillar-title">Ideas Hub</div>
+      <div class="pillar-desc">An idea engine room generating concepts, strategies and frameworks carried through to execution.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <span class="pillar-icon">🏢</span>
+      <div class="pillar-title">Multi-Sector Group</div>
+      <div class="pillar-desc">Structured as a parent organisation with specialised operational arms across industries.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <span class="pillar-icon">🏛️</span>
+      <div class="pillar-title">Gov & Corporate Partner</div>
+      <div class="pillar-desc">Trusted partner for public systems, transport, digital transformation and organisational reform.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <span class="pillar-icon">🌟</span>
+      <div class="pillar-title">People-Driven</div>
+      <div class="pillar-desc">A high-performance collective of thinkers, builders and executors committed to excellence.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">05</div>
+      <span class="pillar-icon">🚀</span>
+      <div class="pillar-title">Future Impact</div>
+      <div class="pillar-desc">Designed for long-term relevance — creating adaptive, future-ready solutions for all stakeholders.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVISIONS -->
+<section id="divisions">
+  <div class="divisions-header reveal">
+    <p class="section-label">Our Divisions</p>
+    <h2 class="section-title">A Multi-Sector Business Group</h2>
+  </div>
+  <div class="divisions-grid reveal">
+    <div class="division-card">
+      <div class="division-top">
+        <div class="division-num">01</div>
+        <div class="division-tag">SGP Consulting</div>
+        <div class="division-name">Strategy & Advisory</div>
+      </div>
+      <div class="division-body">
+        <p class="division-desc">Strategy, research, government advisory and organisational transformation. Grounded in policy understanding and strategic execution, enabling institutions to evolve sustainably.</p>
+      </div>
+    </div>
+    <div class="division-card">
+      <div class="division-top">
+        <div class="division-num">02</div>
+        <div class="division-tag">SGP Data Hub</div>
+        <div class="division-name">Intelligence & Analytics</div>
+      </div>
+      <div class="division-body">
+        <p class="division-desc">Data analytics, intelligence gathering, market insights and reporting. Identifying trends and opportunities to support informed decisions across public and private sectors.</p>
+      </div>
+    </div>
+    <div class="division-card">
+      <div class="division-top">
+        <div class="division-num">03</div>
+        <div class="division-tag">SGP Productions</div>
+        <div class="division-name">Manufacturing & Creative</div>
+      </div>
+      <div class="division-body">
+        <p class="division-desc">Manufacturing support, ideas-to-product engines and creative design. Building scalable creative enterprises within the cultural and entertainment economy.</p>
+      </div>
+    </div>
+    <div class="division-card">
+      <div class="division-top">
+        <div class="division-num">04</div>
+        <div class="division-tag">SGP Construction</div>
+        <div class="division-name">Infrastructure & Development</div>
+      </div>
+      <div class="division-body">
+        <p class="division-desc">Infrastructure development, community projects and facility solutions. Enhancing public systems, municipal operations and urban development across communities.</p>
+      </div>
+    </div>
+    <div class="division-card">
+      <div class="division-top">
+        <div class="division-num">05</div>
+        <div class="division-tag">SGP Digital & Technology</div>
+        <div class="division-name">Software & Automation</div>
+      </div>
+      <div class="division-body">
+        <p class="division-desc">Software development, automation, digital systems and platforms. Driving digital transformation and building future-ready technology infrastructure for organisations.</p>
+      </div>
+    </div>
+    <div class="division-card" style="border-bottom-color: var(--gold);">
+      <div class="division-top" style="background: linear-gradient(135deg, #3a0a1e, #6A1E3A);">
+        <div class="division-num">∞</div>
+        <div class="division-tag" style="color: #fff; opacity: 0.6;">The SGP Ecosystem</div>
+        <div class="division-name">Cross-Sector Impact</div>
+      </div>
+      <div class="division-body">
+        <p class="division-desc">This integrated ecosystem enables versatility, scalability and cross-sector impact — bridging thinking and doing, vision and execution, across nations and communities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS AREAS -->
+<section id="focus">
+  <div class="focus-left reveal">
+    <p class="section-label">Our Services</p>
+    <h2 class="section-title">Focus Areas & What We Deliver</h2>
+    <p class="focus-subtitle">We don't just share ideas — we design solutions that work. Our brand promise: clarity, structure and partnerships that transform ideas into sustainable outcomes.</p>
+  </div>
+  <div class="focus-list reveal">
+    <div class="focus-item">
+      <div class="focus-item-title">Business Ideation & Concept Development</div>
+      <div class="focus-item-desc">Designing new products, services and project ideas that drive relevance and sustainable growth for organisations.</div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-item-title">Corporate Innovation Consulting</div>
+      <div class="focus-item-desc">Helping organisations redesign systems, improve productivity and enhance operational efficiency across all levels.</div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-item-title">Brand Visibility & Growth Strategy</div>
+      <div class="focus-item-desc">Building, repositioning and strengthening brands through intentional creativity and result-oriented communication.</div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-item-title">Research & Market Intelligence</div>
+      <div class="focus-item-desc">Identifying trends, opportunities and industry insights to support informed decisions and competitive advantage.</div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-item-title">Strategic Partnership Facilitation</div>
+      <div class="focus-item-desc">Connecting organisations with innovators, investors and collaborators for mutual growth and long-term value.</div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-item-title">Workshops & Creative Labs</div>
+      <div class="focus-item-desc">Hosting innovation sessions, idea camps and strategy summits to inspire leaders, teams and changemakers.</div>
+    </div>
+    <div class="focus-item">
+      <div class="focus-item-title">Government & Public Sector Solutions</div>
+      <div class="focus-item-desc">Delivering development-driven solutions that enhance public systems, transport, service delivery and digital transformation.</div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section id="mission">
+  <div style="text-align: center;" class="reveal">
+    <p class="section-label light" style="justify-content: center;"><span style="color: var(--gold); font-family: Montserrat; font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;">Purpose</span></p>
+    <h2 class="section-title light">Mission & Vision</h2>
+  </div>
+  <div class="mission-grid reveal">
+    <div class="mv-card">
+      <div class="mv-label">Our Mission</div>
+      <p class="mv-text">To connect creative minds, strategic thinkers, and industry professionals across sectors to generate, refine, and transform ideas into actionable, value-driven solutions. Through research, synergy and strategic collaboration, we partner with organisations to deliver practical innovations that enhance visibility, operational efficiency, productivity, profitability and sustainable societal impact.</p>
+    </div>
+    <div class="mv-card">
+      <div class="mv-label">Our Vision</div>
+      <p class="mv-text">To position Synovate Global Partners as a premier multi-sector innovation and strategy think-tank and partnership hub, where ideas, talent and collaboration converge to transform possibilities into scalable, high-impact solutions that drive productivity, profitability and sustainable economic growth for businesses, governments and communities across Africa and beyond.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section id="values">
+  <div class="values-header reveal">
+    <p class="section-label" style="justify-content: center;">Core Values</p>
+    <h2 class="section-title">The Heart of SGP</h2>
+  </div>
+  <div class="values-grid reveal">
+    <div class="val-card">
+      <div class="val-icon">🔗</div>
+      <div class="val-title">Synergy</div>
+      <div class="val-desc">We achieve more together. Collaboration is not just how we work — it's why we exist. Every partnership multiplies our collective potential.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon">⚡</div>
+      <div class="val-title">Innovation</div>
+      <div class="val-desc">We challenge norms and introduce future-ready ideas. The status quo is our starting point, never our destination.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon">🛡️</div>
+      <div class="val-title">Integrity</div>
+      <div class="val-desc">We operate with honesty, transparency and excellence in every interaction — with partners, clients and communities.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon">🎨</div>
+      <div class="val-title">Creativity</div>
+      <div class="val-desc">We think differently and transform imagination into impact. Every challenge is an invitation to design something extraordinary.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon">♟️</div>
+      <div class="val-title">Strategic Thinking</div>
+      <div class="val-desc">Every idea must be purposeful, actionable and result-oriented. We turn vision into structured, executable strategy.</div>
+    </div>
+    <div class="val-card">
+      <div class="val-icon">💎</div>
+      <div class="val-title">Value Creation</div>
+      <div class="val-desc">Our success is measured by the success we create for our partners. We exist to generate measurable value for all stakeholders.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section id="differentiators">
+  <div class="reveal">
+    <p class="section-label">What Makes SGP Different</p>
+    <h2 class="section-title">Our Competitive Edge</h2>
+  </div>
+  <div class="diff-grid reveal">
+    <div class="diff-item">
+      <div class="diff-num">01</div>
+      <div class="diff-content">
+        <div class="diff-title">Cross-Disciplinary Expertise</div>
+        <div class="diff-desc">Spanning data analytics, technology, operations, branding, project management and leadership — all under one strategic roof.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">02</div>
+      <div class="diff-content">
+        <div class="diff-title">THINK M.A.D. Culture</div>
+        <div class="diff-desc">A strong culture of innovation rooted in Making A Difference — we don't settle, we reimagine.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">03</div>
+      <div class="diff-content">
+        <div class="diff-title">Structured Governance</div>
+        <div class="diff-desc">Highly structured governance with clearly defined partner roles ensures accountability, efficiency and delivery at every level.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">04</div>
+      <div class="diff-content">
+        <div class="diff-title">Public & Private Sector Reach</div>
+        <div class="diff-desc">Proven capacity to operate effectively across both public and private sectors, bridging gaps that others cannot.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">05</div>
+      <div class="diff-content">
+        <div class="diff-title">Policy Research Commitment</div>
+        <div class="diff-desc">Deep commitment to policy research and institutional development that enables sustainable, lasting change.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">06</div>
+      <div class="diff-content">
+        <div class="diff-title">Strategy × Creativity × Technology</div>
+        <div class="diff-desc">A balanced foundation in strategy, creativity, technology and impact execution — the complete formula for transformational outcomes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner reveal">
+    <p class="cta-eyebrow">Ready to Build the Future?</p>
+    <h2 class="cta-title">Let's Turn Your Ideas<br>Into Impact</h2>
+    <p class="cta-sub">Whether you're a government, corporation, entrepreneur or innovator — Synovate Global Partners is your strategic catalyst for scalable, meaningful growth.</p>
+    <div class="cta-buttons">
+      <a href="mailto:info@synovateglobalpartners.com" class="btn-primary">Get In Touch</a>
+      <a href="#about" class="btn-outline">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px">
+          <polygon points="20,2 36,12 36,28 20,38 4,28 4,12" fill="none" stroke="#E0CD98" stroke-width="1" opacity="0.4"/>
+          <polygon points="20,6 32,14 32,26 20,34 8,26 8,14" fill="#6A1E3A"/>
+          <path d="M14 16 L20 10 L26 16 L20 22 Z" fill="#E0CD98" opacity="0.9"/>
+          <path d="M14 24 L20 18 L26 24 L20 30 Z" fill="#E0CD98" opacity="0.5"/>
+        </svg>
+        <div class="nav-logo-text">
+          <span class="brand">SYNOVATE</span>
+          <span class="sub">Global Partners</span>
+        </div>
+      </div>
+      <p class="footer-tagline">Where Vision Leads the World. A multi-dimensional innovation and development organisation transforming ideas into systems, solutions and sustainable enterprises.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigate</p>
+      <ul class="footer-links">
+        <li><a href="#about">Who We Are</a></li>
+        <li><a href="#pillars">What We Stand For</a></li>
+        <li><a href="#divisions">Our Divisions</a></li>
+        <li><a href="#focus">Services</a></li>
+        <li><a href="#values">Core Values</a></li>
+        <li><a href="#mission">Mission & Vision</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Our Divisions</p>
+      <ul class="footer-links">
+        <li><a href="#divisions">SGP Consulting</a></li>
+        <li><a href="#divisions">SGP Data Hub</a></li>
+        <li><a href="#divisions">SGP Productions</a></li>
+        <li><a href="#divisions">SGP Construction</a></li>
+        <li><a href="#divisions">SGP Digital & Technology</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 <span>Synovate Global Partners (SGP)</span>. All rights reserved.</p>
+    <p class="footer-motto">Ideas are seeds of transformation.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+</body><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synovate Global Partners | Where Vision Leads the World</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+  --burgundy: #5A1732;
+  --burgundy-dark: #2B0716;
+  --burgundy-light: #7B2948;
+
+  --gold: #D9C38A;
+  --gold-light: #F4E8C5;
+  --gold-dark: #B79A57;
+
+  --white: #FFFFFF;
+  --soft-white: #FCFBF8;
+  --off-white: #F7F5F1;
+  --light-gray: #ECE8E1;
+
+  --text-dark: #1A1114;
+  --text-light: rgba(255,255,255,0.88);
+  --text-muted: rgba(255,255,255,0.58);
+  --text-soft: #6A5B61;
+
+  --glass: rgba(255,255,255,0.06);
+}
+
 #hero {
     min-height: 100vh;
     background: 
@@ -1567,4 +3109,5 @@
   });
 </script>
 </body>
+</html>
 </html>
